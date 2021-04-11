@@ -5,3 +5,4 @@ Work In Progress - Training a GAN to generate drawings using the Quick, Draw! da
   <img src="images/header.png>
 </p>
             
+![test](images/header.png "MarineGEO logo")
