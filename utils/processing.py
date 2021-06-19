@@ -7,6 +7,7 @@ import os
 
 class QuickDraw(Dataset):
     def __init__(self, data, transform=None):
+        assert isinstance(data, np.ndarray)
         self.data = torch.from_numpy(np.array(data)).float()
         self.transform = transform
 
