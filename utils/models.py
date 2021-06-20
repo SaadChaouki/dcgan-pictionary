@@ -2,6 +2,7 @@ import torch.nn as nn
 from torch import optim
 import torch
 import warnings
+import os
 
 warnings.filterwarnings("ignore")
 
@@ -145,5 +146,7 @@ class GAN(object):
                              discriminator_fake_avg_prediction_one, discriminator_fake_avg_prediction_two))
 
     def save(self, location):
-        torch.save(self.generator.state_dict(), f'{location}_generator.pt')
-        torch.save(self.discriminator.state_dict(), f'{location}_discriminator.pt')
+        if not os.path.isdir(location):
+            os.makedirs(location)
+        torch.save(self.generator.state_dict(), f'{location}generator.pt')
+        torch.save(self.discriminator.state_dict(), f'{location}discriminator.pt')
